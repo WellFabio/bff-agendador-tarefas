@@ -14,7 +14,7 @@ public class FeignError implements ErrorDecoder {
 
         switch (response.status()){
             case 409:
-                return new ConflictException("Erro atributa já existente ");
+                return new ConflictException("Erro atributo já existente ");
             case 403:
                 return new ResourceNotFoundException("Erro atributo não encontrado");
             case 401:
