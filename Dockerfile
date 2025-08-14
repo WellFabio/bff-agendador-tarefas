@@ -1,4 +1,4 @@
-FROM maven:3.8-openjdk-17 AS BUILD
+FROM maven:3.8-openjdk-17 as build
 WORKDIR /app
 COPY . .
 
