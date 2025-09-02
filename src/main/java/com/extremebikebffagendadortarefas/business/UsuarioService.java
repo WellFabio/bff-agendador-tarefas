@@ -8,6 +8,7 @@ import com.extremebikebffagendadortarefas.business.dto.in.UsuarioDTORequest;
 import com.extremebikebffagendadortarefas.business.dto.out.EnderecoDTOResponse;
 import com.extremebikebffagendadortarefas.business.dto.out.TelefoneDTOResponse;
 import com.extremebikebffagendadortarefas.business.dto.out.UsuarioDTOResponse;
+import com.extremebikebffagendadortarefas.business.dto.out.ViaCepDTOResponse;
 import com.extremebikebffagendadortarefas.infrastructure.client.UsuarioClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -62,6 +63,10 @@ public class UsuarioService {
 
     public TelefoneDTOResponse cadastraTelefone(String token, TelefoneDTORequest dto){
        return client.cadastroTelefone(dto, token);
+    }
+
+    public ViaCepDTOResponse buscarEnderecoPorCep(String cep){
+        return client.buscarDadosCep(cep);
     }
 }
 
