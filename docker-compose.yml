@@ -33,7 +33,7 @@ services:
     build: ../notificacao
     container_name: notificacao
     ports:
-      - "8084:8084"
+      - "8082:8082"
   postgres:
     image: postgres:latest
     container_name: postgres

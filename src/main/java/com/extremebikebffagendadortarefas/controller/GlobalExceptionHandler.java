@@ -3,6 +3,7 @@ package com.extremebikebffagendadortarefas.controller;
 
 
 import com.extremebikebffagendadortarefas.infrastructure.exceptions.ConflictException;
+import com.extremebikebffagendadortarefas.infrastructure.exceptions.IllegalArgumentException;
 import com.extremebikebffagendadortarefas.infrastructure.exceptions.ResourceNotFoundException;
 import com.extremebikebffagendadortarefas.infrastructure.exceptions.UnauthorizedException;
 import org.springframework.http.HttpStatus;
@@ -27,5 +28,10 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(UnauthorizedException.class)
     public ResponseEntity<String> handleUnauthorizedException(UnauthorizedException ex){
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.UNAUTHORIZED);
+    }
+
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ResponseEntity<String> handleIllegalArgumentException(IllegalArgumentException ex){
+        return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
 }
